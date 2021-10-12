@@ -47,7 +47,7 @@ export default {
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
-  min-height: unset;
+  min-height: 100vh;
   height: unset;
 }
 
@@ -64,17 +64,50 @@ export default {
 .article-item:nth-of-type(3) {
   margin-top: 0;
 }
+.article-item:nth-of-type(3n + 1) .article-item-wrapper {
+  margin-right: auto;
+  margin-left: 0;
+}
 
-@media screen and (max-width: 500px) {
+.article-item:nth-of-type(3n + 3) .article-item-wrapper {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 800px) {
   #press {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-bottom: 35px;
   }
 
   .press-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 30px;
+  }
+
+  .article-item:nth-of-type(1),
+  .article-item:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  .article-item:nth-of-type(3) {
+    margin-top: 35px;
+  }
+
+  .article-item:nth-of-type(3n + 1) .article-item-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .article-item:nth-of-type(3n + 3) .article-item-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .press-wrapper {
+    flex-direction: column;
   }
 
   .article-item:nth-of-type(1) {

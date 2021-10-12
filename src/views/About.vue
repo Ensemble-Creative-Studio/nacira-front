@@ -69,7 +69,7 @@ export default {
   padding-bottom: 40px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .container {
     flex-direction: column;
     padding-left: 16px;
@@ -79,4 +79,14 @@ export default {
     height: unset;
   }
 }
+/* @media screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+    min-height: unset;
+    height: unset;
+  }
+} */
 </style>

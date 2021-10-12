@@ -32,11 +32,37 @@ img {
   object-fit: cover;
 }
 
+@media screen and (max-width: 800px) {
+  .about-img-container {
+    order: -1;
+    width: 100%;
+    margin-top: 30px;
+    height: 500px;
+  }
+  .img-wrapper {
+    height: 100%;
+  }
+  img {
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .about-img-container {
     order: -1;
     width: 100%;
     margin-top: 30px;
+    height: unser;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 </style>

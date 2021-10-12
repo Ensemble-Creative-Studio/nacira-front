@@ -57,11 +57,22 @@ export default {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .about-text-container {
     width: 100%;
     margin-top: 40px;
   }
+
+  .contact-wrapper {
+    max-width: 30%;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* .about-text-container {
+    width: 100%;
+    margin-top: 40px;
+  } */
 
   .contact-wrapper {
     max-width: 60%;

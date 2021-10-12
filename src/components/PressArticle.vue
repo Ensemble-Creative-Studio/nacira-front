@@ -97,19 +97,36 @@ a {
   color: black;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .article-item {
-    flex-basis: 100%;
+    flex-basis: 50%;
     margin-top: 35px;
   }
   .article-item-wrapper {
-    width: 100%;
+    width: 90%;
   }
+  .img-wrapper {
+    /* justify-content: start; */
+    height: 370px;
+  }
+
   .img-wrapper img {
     width: unset;
   }
   .text-container {
     margin-top: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .article-item {
+    flex-basis: 100%;
+  }
+  .article-item-wrapper {
+    width: 100%;
+  }
+
+  .img-wrapper img {
+    width: 100%;
   }
 }
 </style>
