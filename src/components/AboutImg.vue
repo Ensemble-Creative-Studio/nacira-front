@@ -1,0 +1,42 @@
+<template>
+  <div class="about-img-container">
+    <div class="img-wrapper">
+      <img v-if="photo" :src="photo" alt="" />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "AboutImg",
+  props: {
+    photo: String,
+  },
+};
+</script>
+
+<style scoped>
+.about-img-container {
+  width: 33%;
+  margin-top: calc(147px - var(--nav-size));
+}
+
+.img-wrapper {
+  max-height: 513px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+  .about-img-container {
+    order: -1;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+</style>
