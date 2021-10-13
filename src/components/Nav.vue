@@ -57,6 +57,9 @@ h2 {
   margin-left: 20px;
   margin-right: 20px;
 }
+.menu > a:last-child {
+  margin-right: 0;
+}
 
 @media screen and (max-width: 500px) {
   #nav {
@@ -70,9 +73,6 @@ h2 {
     font-size: 16px;
     margin-left: 7.5px;
     margin-right: 7.5px;
-  }
-  .menu > a:last-child {
-    margin-right: 0;
   }
 }
 </style>
