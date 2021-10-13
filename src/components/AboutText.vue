@@ -1,7 +1,12 @@
 <template>
   <div class="about-text-container">
-    <p v-if="description" class="description" v-html="markdownToHtml"></p>
-    <div class="contact-wrapper">
+    <p
+      v-if="description"
+      class="description"
+      v-html="markdownToHtml"
+      v-scrollanimation
+    ></p>
+    <div class="contact-wrapper" v-scrollanimation>
       <p>{{ mail }}</p>
       <p>{{ phone }}</p>
       <p>{{ address }}</p>
@@ -36,6 +41,11 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.description {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
 .description p {
   font-size: 18px;
   font-family: "DM Sans";
@@ -46,6 +56,7 @@ export default {
 
 .contact-wrapper {
   max-width: 40%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .contact-wrapper p {
@@ -55,6 +66,18 @@ export default {
 }
 .contact-wrapper p:last-child {
   margin-top: 30px;
+}
+
+.description.before-enter,
+.contact-wrapper.before-enter {
+  transform: translateY(25px);
+  opacity: 0.5;
+}
+
+.description.enter,
+.contact-wrapper.enter {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 @media screen and (max-width: 800px) {

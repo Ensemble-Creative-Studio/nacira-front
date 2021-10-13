@@ -34,12 +34,16 @@ export const fetchContact = async () => {
 };
 
 export const fetchAllPress = async () => {
-  let pressError, pressData;
+  let pressError,
+    pressData,
+    pressLoaded = false;
   try {
     const res = await fetch(`${SERVER_URL}/presses`);
     pressData = await res.json();
+    pressLoaded = true;
   } catch (newError) {
     pressError = newError;
+    pressLoaded = false;
   }
-  return { pressData, pressError };
+  return { pressData, pressError, pressLoaded };
 };

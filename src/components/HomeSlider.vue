@@ -1,8 +1,8 @@
 <template>
   <div v-if="slides" class="slider-container">
     <div>
-      <span class="left" @click="sliderHandler(-1)"></span>
-      <span class="right" @click="sliderHandler(1)"></span>
+      <span class="left" @click="() => clickHandler(-1)"></span>
+      <span class="right" @click="() => clickHandler(1)"></span>
       <div class="slider-wrapper">
         <HomeSlideItem
           :sliderIndex="sliderIndex"
@@ -31,6 +31,7 @@ export default {
     return {
       slides: [],
       sliderIndex: 0,
+      intervalId: 0,
     };
   },
   async mounted() {
@@ -38,14 +39,25 @@ export default {
     if (sliderData.statusCode) console.error(sliderData);
     if (sliderError) console.error(sliderError);
     if (sliderData) this.slides = sliderData.slides;
+    this.intervalFunction();
   },
   methods: {
     fetchSliderImages,
+    clickHandler(direction) {
+      clearInterval(this.intervalId);
+      this.sliderHandler(direction);
+      this.intervalFunction();
+    },
     sliderHandler(direction) {
       const slideLength = this.slides.length;
       let nextIndex = (this.sliderIndex + direction) % slideLength;
       if (nextIndex < 0) nextIndex = slideLength - 1;
       this.sliderIndex = nextIndex;
+    },
+    intervalFunction() {
+      this.intervalId = setInterval(() => {
+        this.sliderHandler(1);
+      }, 3000);
     },
   },
 };

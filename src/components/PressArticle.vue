@@ -1,10 +1,17 @@
 <template>
-  <div v-if="article" class="article-item">
+  <div
+    v-show="isImageLoaded"
+    :style="isVisibleOnLoad && delay"
+    class="article-item"
+    ref="item"
+    v-scrollanimation
+  >
     <div class="article-item-wrapper">
       <div class="img-wrapper">
         <img
           :src="serverUrl + article.cover.url"
           :alt="article.cover.alternativeText"
+          @load="onImageLoad"
         />
       </div>
     </div>
@@ -12,7 +19,10 @@
       <h3 class="title">{{ article.title }}</h3>
       <div class="text-wrapper">
         <p class="description">{{ article.description }}</p>
-        <a :href="serverUrl + article.file[0].url" :download="article.file.name"
+        <a
+          v-if="article.file.length"
+          :href="serverUrl + article.file[0].url"
+          :download="article.file.name"
           >Dowload</a
         >
       </div>
@@ -25,16 +35,34 @@ import { SERVER_URL } from "../global";
 
 export default {
   name: "PressArticle",
-  props: {
-    article: Object,
-  },
   data() {
     return {
       serverUrl: "",
+      isImageLoaded: false,
+      isVisibleOnLoad: true,
     };
+  },
+  props: {
+    article: Object,
+    index: Number,
+  },
+  computed: {
+    delay() {
+      return `transition-delay: ${0.1 * this.index}s`;
+    },
+  },
+  methods: {
+    onImageLoad() {
+      this.isImageLoaded = true;
+    },
   },
   mounted() {
     this.serverUrl = SERVER_URL;
+    setTimeout(() => {
+      if (!this.$refs.item.classList.contains("enter")) {
+        this.isVisibleOnLoad = false;
+      }
+    }, 500);
   },
 };
 </script>
@@ -42,8 +70,8 @@ export default {
 <style scoped>
 .article-item {
   flex-basis: 33.333333%;
-  height: 500px;
   margin-top: 130px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .article-item-wrapper {
@@ -56,7 +84,7 @@ export default {
 
 .img-wrapper {
   width: 100%;
-  height: 400px;
+  height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -97,6 +125,16 @@ a {
   color: black;
 }
 
+.before-enter {
+  transform: translateY(20px);
+  opacity: 0.5;
+}
+
+.enter {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 @media screen and (max-width: 800px) {
   .article-item {
     flex-basis: 50%;
@@ -104,10 +142,6 @@ a {
   }
   .article-item-wrapper {
     width: 90%;
-  }
-  .img-wrapper {
-    /* justify-content: start; */
-    height: 370px;
   }
 
   .img-wrapper img {
@@ -125,8 +159,8 @@ a {
     width: 100%;
   }
 
-  .img-wrapper img {
-    width: 100%;
+  .title {
+    font-size: 28px;
   }
 }
 </style>

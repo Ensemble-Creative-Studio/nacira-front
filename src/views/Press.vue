@@ -2,9 +2,11 @@
   <div id="press" class="container">
     <div class="press-wrapper">
       <PressArticle
+        v-show="pressLoaded"
         :article="article"
         :key="article.id"
-        v-for="article in articles"
+        :index="index"
+        v-for="(article, index) in articles"
       />
     </div>
   </div>
@@ -24,16 +26,18 @@ export default {
   data() {
     return {
       articles: [],
+      pressLoaded: false,
     };
   },
   async mounted() {
     //API
-    const { pressData, pressError } = await this.fetchAllPress();
+    const { pressData, pressError, pressLoaded } = await this.fetchAllPress();
     if (pressData.statusCode) console.error(pressData);
     if (pressError) console.error(pressError);
     if (pressData) {
       this.articles = pressData;
     }
+    this.pressLoaded = pressLoaded;
   },
   methods: {
     fetchAllPress,
@@ -48,7 +52,8 @@ export default {
   padding-right: 40px;
   padding-bottom: 40px;
   min-height: 100vh;
-  height: unset;
+  height: auto;
+  overflow: hidden;
 }
 
 .press-wrapper {
@@ -56,7 +61,6 @@ export default {
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .article-item:nth-of-type(1),

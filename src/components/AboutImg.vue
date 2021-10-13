@@ -1,7 +1,7 @@
 <template>
   <div class="about-img-container">
     <div class="img-wrapper">
-      <img v-if="photo" :src="photo" alt="" />
+      <img v-if="photo" :src="photo" alt="" v-scrollanimation />
     </div>
   </div>
 </template>
@@ -30,6 +30,15 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+img.before-enter {
+  opacity: 0.5;
+}
+
+img.enter {
+  opacity: 1;
 }
 
 @media screen and (max-width: 800px) {

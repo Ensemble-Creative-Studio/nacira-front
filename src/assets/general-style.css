@@ -60,5 +60,7 @@ html {
 }
 
 strong {
-  font-weight: bold;
+  font-family: "Wremena";
+  font-weight: 300;
+  font-size: 28px;
 }
