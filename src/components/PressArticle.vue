@@ -23,7 +23,7 @@
           v-if="article.file.length"
           :href="serverUrl + article.file[0].url"
           :download="article.file.name"
-          >Dowload</a
+          >Download</a
         >
       </div>
     </div>
