@@ -3,8 +3,8 @@
     <div v-show="index === sliderIndex">
       <img draggable="false" class="slide-img" :src="serverUrl + slide.url" />
       <p class="intro-text" v-if="sliderIndex === 0">
-        Design, Naval architecture, <br class="not-visible" />
-        & creative direction
+        Design, Naval Architecture, <br class="not-visible" />
+        & Creative Direction
       </p>
     </div>
   </transition>

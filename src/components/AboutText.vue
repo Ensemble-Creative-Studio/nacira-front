@@ -9,7 +9,7 @@
     <div class="contact-wrapper" v-scrollanimation>
       <p>{{ mail }}</p>
       <p>{{ phone }}</p>
-      <p>{{ address }}</p>
+      <p class="address">{{ address }}</p>
     </div>
   </div>
 </template>
@@ -55,8 +55,12 @@ export default {
 }
 
 .contact-wrapper {
-  max-width: 200px;
+  /* max-width: 200px; */
   transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.address {
+  max-width: 150px;
 }
 
 .contact-wrapper p {
