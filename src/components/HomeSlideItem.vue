@@ -2,7 +2,7 @@
   <transition name="fade">
     <div v-show="index === sliderIndex">
       <img draggable="false" class="slide-img" :src="serverUrl + slide.url" />
-      <p class="intro-text" v-if="sliderIndex === 0">
+      <p class="intro-text">
         Design, Naval Architecture, <br class="not-visible" />
         & Creative Direction
       </p>
@@ -70,7 +70,7 @@ div {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .fade-enter-from,

@@ -7,6 +7,12 @@
       v-scrollanimation
     ></p>
     <div class="contact-wrapper" v-scrollanimation>
+      <p>
+        <a href="https://www.instagram.com/axeldebeaufort/"
+          >instagram @axelde beaufort</a
+        >
+      </p>
+      <p>Olivier de La Ferrière</p>
       <p>{{ mail }}</p>
       <p>{{ phone }}</p>
       <p class="address">{{ address }}</p>
@@ -56,20 +62,26 @@ export default {
 
 .contact-wrapper {
   /* max-width: 200px; */
+  /* margin-top: 40px; */
   transition: transform 0.5s ease, opacity 0.5s ease;
+  line-height: 26px;
 }
 
-.address {
+/* .address {
   max-width: 150px;
-}
+} */
 
-.contact-wrapper p {
+.contact-wrapper p,
+.contact-wrapper a {
   font-size: 19px;
   font-family: "Wremena", serif;
   font-weight: 300;
+  color: black;
+  text-decoration: none;
 }
-.contact-wrapper p:last-child {
-  margin-top: 30px;
+
+.contact-wrapper p:first-of-type {
+  margin-bottom: 30px;
 }
 
 .description.before-enter,

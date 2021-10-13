@@ -57,7 +57,7 @@ export default {
     intervalFunction() {
       this.intervalId = setInterval(() => {
         this.sliderHandler(1);
-      }, 3000);
+      }, 5000);
     },
   },
 };
