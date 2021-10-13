@@ -1,11 +1,12 @@
 <template>
   <transition name="fade">
-    <img
-      v-show="index === sliderIndex"
-      draggable="false"
-      class="slide-img"
-      :src="serverUrl + slide.url"
-    />
+    <div v-show="index === sliderIndex">
+      <img draggable="false" class="slide-img" :src="serverUrl + slide.url" />
+      <p class="intro-text" v-if="sliderIndex === 0">
+        Design, Naval architecture, <br class="not-visible" />
+        & creative direction
+      </p>
+    </div>
   </transition>
 </template>
 
@@ -31,7 +32,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+div {
+  overflow: hidden;
+}
+
 .slide-img {
   position: absolute;
   top: 0;
@@ -52,6 +57,17 @@ export default {
   transition: opacity 0.5s;
 }
 
+.intro-text {
+  position: absolute;
+  z-index: 200;
+  bottom: 60px;
+  left: 40px;
+  font-family: "Wremena", serif;
+  font-size: 64px;
+  font-weight: 300;
+  color: white;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -60,5 +76,18 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .not-visible {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .intro-text {
+    font-size: 54px;
+    left: 15px;
+    bottom: 69px;
+  }
 }
 </style>
