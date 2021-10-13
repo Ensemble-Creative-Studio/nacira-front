@@ -55,7 +55,7 @@ export default {
 }
 
 .contact-wrapper {
-  max-width: 40%;
+  max-width: 200px;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
@@ -87,16 +87,11 @@ export default {
   }
 
   .contact-wrapper {
-    max-width: 30%;
+    max-width: 200px;
     margin-top: 40px;
   }
 }
 @media screen and (max-width: 500px) {
-  /* .about-text-container {
-    width: 100%;
-    margin-top: 40px;
-  } */
-
   .contact-wrapper {
     max-width: 60%;
   }
