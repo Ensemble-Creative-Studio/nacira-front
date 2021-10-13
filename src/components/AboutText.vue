@@ -8,8 +8,8 @@
     ></p>
     <div class="contact-wrapper" v-scrollanimation>
       <p>
-        <a href="https://www.instagram.com/axeldebeaufort/"
-          >instagram @axelde beaufort</a
+        <a target="_blank" href="https://www.instagram.com/axeldebeaufort/"
+          >instagram @axeldebeaufort</a
         >
       </p>
       <p>Olivier de La Ferrière</p>
