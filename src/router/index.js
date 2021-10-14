@@ -5,8 +5,12 @@ import Press from "../views/Press.vue";
 
 const routes = [
   {
+    mode: 'history',
+    hash: false,
+    routes:
+  {
     path: "/",
-    name: "Home",
+    name: "Home", 
     component: Home,
   },
   {
@@ -18,7 +22,7 @@ const routes = [
     path: "/press",
     name: "Press",
     component: Press,
-  },
+  },}
 ];
 
 const router = createRouter({
