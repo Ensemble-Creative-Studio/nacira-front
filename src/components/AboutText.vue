@@ -6,7 +6,7 @@
       v-html="markdownToHtml"
       v-scrollanimation
     ></p>
-    <div class="contact-wrapper" v-scrollanimation>
+    <div v-if="description" class="contact-wrapper" v-scrollanimation>
       <p>
         <a target="_blank" href="https://www.instagram.com/axeldebeaufort/"
           >instagram @axeldebeaufort</a
