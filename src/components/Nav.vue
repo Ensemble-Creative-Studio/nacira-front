@@ -41,14 +41,14 @@ export default {
 }
 
 #nav a,
-#nav h2 {
+#nav h1 {
   color: black;
   text-decoration: none;
   font-family: "Wremena", serif;
   font-weight: 300;
 }
 
-h2 {
+h1 {
   font-size: 30px;
 }
 
@@ -66,7 +66,7 @@ h2 {
     padding: 16px;
   }
 
-  h2 {
+  h1 {
     font-size: 16px;
   }
   .menu > a {
