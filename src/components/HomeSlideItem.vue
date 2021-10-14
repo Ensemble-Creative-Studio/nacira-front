@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div v-show="index === sliderIndex">
-      <img draggable="false" class="slide-img" :src="serverUrl + slide.url" />
+      <img draggable="false" class="slide-img" :src="slide.url" />
       <p class="intro-text">
         Design, Naval Architecture, <br class="not-visible" />
         & Creative Direction
@@ -11,23 +11,13 @@
 </template>
 
 <script>
-// Globals
-import { SERVER_URL } from "../global";
 
 export default {
   name: "HomeSlideItem",
-  data() {
-    return {
-      serverUrl: "",
-    };
-  },
   props: {
     slide: Object,
     index: Number,
     sliderIndex: Number,
-  },
-  mounted() {
-    this.serverUrl = SERVER_URL;
   },
 };
 </script>

@@ -9,7 +9,7 @@
     <div class="article-item-wrapper">
       <div class="img-wrapper">
         <img
-          :src="serverUrl + article.cover.url"
+          :src="article.cover.url"
           :alt="article.cover.alternativeText"
           @load="onImageLoad"
         />
@@ -21,7 +21,7 @@
         <p class="description">{{ article.description }}</p>
         <a
           v-if="article.file.length"
-          :href="serverUrl + article.file[0].url"
+          :href="article.file[0].url"
           :download="article.file.name"
           >Download</a
         >
@@ -31,13 +31,11 @@
 </template>
 
 <script>
-import { SERVER_URL } from "../global";
 
 export default {
   name: "PressArticle",
   data() {
     return {
-      serverUrl: "",
       isImageLoaded: false,
       isVisibleOnLoad: true,
     };
@@ -57,7 +55,6 @@ export default {
     },
   },
   mounted() {
-    this.serverUrl = SERVER_URL;
     setTimeout(() => {
       if (!this.$refs.item.classList.contains("enter")) {
         this.isVisibleOnLoad = false;

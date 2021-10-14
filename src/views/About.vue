@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { SERVER_URL } from "../global";
 import { fetchAbout, fetchContact } from "../services";
 
 //Components
@@ -40,7 +39,7 @@ export default {
     if (aboutError) console.error(aboutError);
     if (aboutData) {
       this.aboutDataDescription = aboutData.description;
-      this.aboutDataUrl = SERVER_URL + aboutData.photo.url;
+      this.aboutDataUrl = aboutData.photo.url;
     }
 
     const { contactData, contactError } = await this.fetchContact();
