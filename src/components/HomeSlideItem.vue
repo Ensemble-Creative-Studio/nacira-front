@@ -3,7 +3,7 @@
     <div v-show="index === sliderIndex">
       <img draggable="false" class="slide-img" :src="slide.url" />
       <p class="intro-text">
-        Design + Naval Architecture + <br class="not-visible" />
+        Design + Naval Architecture <br class="not-visible" />
         + Creative Direction
       </p>
     </div>
