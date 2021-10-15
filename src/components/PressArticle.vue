@@ -31,7 +31,6 @@
 </template>
 
 <script>
-
 export default {
   name: "PressArticle",
   data() {
@@ -81,7 +80,7 @@ export default {
 
 .img-wrapper {
   width: 100%;
-  height: 430px;
+  min-height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: end;
