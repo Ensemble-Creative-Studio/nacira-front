@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
-    <div v-show="index === sliderIndex">
-      <img draggable="false" class="slide-img" :src="slide.url" />
+    <div v-if="index === sliderIndex">
+      <img class="slide-img" :src="slide.url" @load="isImgLoaded = true" />
       <p class="intro-text">
         Design + Naval Architecture <br class="not-visible" />
         + Creative Direction
@@ -13,6 +13,11 @@
 <script>
 export default {
   name: "HomeSlideItem",
+  data() {
+    return {
+      isImgLoaded: false,
+    };
+  },
   props: {
     slide: Object,
     index: Number,
@@ -42,8 +47,8 @@ div {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-  opacity: 1;
-  transition: opacity 0.5s;
+  /* transition: opacity 0.5s; */
+  will-change: opacity;
 }
 
 .intro-text {
@@ -59,6 +64,9 @@ div {
 
 .fade-enter-active,
 .fade-leave-active {
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
 }
 
