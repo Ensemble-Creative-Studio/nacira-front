@@ -80,7 +80,7 @@ export default {
 
 .img-wrapper {
   width: 100%;
-  min-height: 430px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -94,7 +94,7 @@ export default {
 }
 
 .text-container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .title {
@@ -105,7 +105,7 @@ export default {
 }
 
 .text-wrapper {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .description {
@@ -130,6 +130,12 @@ a {
 .enter {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media screen and (min-width: 1850px) {
+  .img-wrapper {
+    height: 52vh;
+  }
 }
 
 @media screen and (max-width: 800px) {

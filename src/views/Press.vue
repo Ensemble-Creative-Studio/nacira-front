@@ -48,12 +48,13 @@ export default {
 <style>
 #press {
   background: var(--secondary);
+  width: 100vw;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
   min-height: 100vh;
   height: auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .press-wrapper {
