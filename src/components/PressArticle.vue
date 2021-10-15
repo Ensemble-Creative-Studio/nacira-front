@@ -100,6 +100,7 @@ export default {
 .title {
   font-family: "Wremena", sans-serif;
   font-size: 30px;
+  line-height: 23px;
   font-weight: normal;
 }
 
