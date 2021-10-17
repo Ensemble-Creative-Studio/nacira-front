@@ -88,6 +88,8 @@ span {
   width: 50vw;
   height: 100vh;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 span.left {
