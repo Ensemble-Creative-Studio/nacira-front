@@ -80,7 +80,7 @@ export default {
 
 .img-wrapper {
   width: 100%;
-  height: 500px;
+  /* height: 500px; */
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -131,12 +131,12 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
-
+/* 
 @media screen and (min-width: 1850px) {
   .img-wrapper {
     height: 52vh;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .article-item {
