@@ -9,8 +9,8 @@
     <div class="article-item-wrapper">
       <div class="img-wrapper">
         <img
-          :src="article.cover.url"
-          :alt="article.cover.alternativeText"
+          :src="article.cover[0].url"
+          :alt="article.cover[0].alternativeText"
           @load="onImageLoad"
         />
       </div>

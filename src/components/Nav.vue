@@ -1,6 +1,8 @@
 <template>
   <div :style="{ backgroundColor: bgColor }" id="nav">
-    <router-link to="/"><h1>Axel de Beaufort Studio</h1></router-link>
+    <router-link to="/"
+      ><h1><span>Axel de Beaufort</span> Studio</h1></router-link
+    >
     <div class="menu">
       <router-link to="/about">About</router-link>
       <router-link to="/press">Press</router-link>
@@ -50,6 +52,11 @@ export default {
 
 h1 {
   font-size: 30px;
+}
+
+h1 span {
+  font-family: "DM Sans";
+  font-weight: bold;
 }
 
 .menu > a {

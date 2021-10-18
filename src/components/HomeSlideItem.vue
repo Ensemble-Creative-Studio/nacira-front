@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div v-if="index === sliderIndex">
-      <img class="slide-img" :src="slide.url" @load="isImgLoaded = true" />
+      <img class="slide-img" :src="image" @load="isImgLoaded = true" />
       <p class="intro-text">
         Design + Naval Architecture <br class="not-visible" />
         + Creative Direction
@@ -16,6 +16,7 @@ export default {
   data() {
     return {
       isImgLoaded: false,
+      image: this.slide.image.url,
     };
   },
   props: {

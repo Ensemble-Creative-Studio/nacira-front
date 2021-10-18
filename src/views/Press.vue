@@ -35,7 +35,7 @@ export default {
     if (pressData.statusCode) console.error(pressData);
     if (pressError) console.error(pressError);
     if (pressData) {
-      this.articles = pressData;
+      this.articles = pressData.Article;
     }
     this.pressLoaded = pressLoaded;
   },

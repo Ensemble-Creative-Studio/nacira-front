@@ -1,9 +1,22 @@
 import { SERVER_URL } from "./global";
 
+// Classic version
+// export const fetchSliderImages = async () => {
+//   let sliderError, sliderData;
+//   try {
+//     const res = await fetch(`${SERVER_URL}/slider`);
+//     sliderData = await res.json();
+//   } catch (newError) {
+//     sliderError = newError;
+//   }
+//   return { sliderData, sliderError };
+// };
+
+//Component version
 export const fetchSliderImages = async () => {
   let sliderError, sliderData;
   try {
-    const res = await fetch(`${SERVER_URL}/slider`);
+    const res = await fetch(`${SERVER_URL}/home-slider`);
     sliderData = await res.json();
   } catch (newError) {
     sliderError = newError;
@@ -33,12 +46,28 @@ export const fetchContact = async () => {
   return { contactData, contactError };
 };
 
+//Classic version
+// export const fetchAllPress = async () => {
+//   let pressError,
+//     pressData,
+//     pressLoaded = false;
+//   try {
+//     const res = await fetch(`${SERVER_URL}/presses`);
+//     pressData = await res.json();
+//     pressLoaded = true;
+//   } catch (newError) {
+//     pressError = newError;
+//     pressLoaded = false;
+//   }
+//   return { pressData, pressError, pressLoaded };
+// };
+//Component version
 export const fetchAllPress = async () => {
   let pressError,
     pressData,
     pressLoaded = false;
   try {
-    const res = await fetch(`${SERVER_URL}/presses`);
+    const res = await fetch(`${SERVER_URL}/press-articles`);
     pressData = await res.json();
     pressLoaded = true;
   } catch (newError) {
