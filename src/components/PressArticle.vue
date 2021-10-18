@@ -20,8 +20,8 @@
       <div class="text-wrapper">
         <p class="description">{{ article.description }}</p>
         <a
-          v-if="article.file"
-          :href="article.file[0].url"
+          v-if="article.file.url"
+          :href="article.file.url"
           :download="article.file.name"
           >Download</a
         >
