@@ -160,6 +160,7 @@ a {
 @media screen and (max-width: 500px) {
   .article-item {
     flex-basis: 100%;
+    max-width: 100%;
   }
   .article-item-wrapper {
     width: 100%;
