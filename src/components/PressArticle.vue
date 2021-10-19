@@ -23,6 +23,7 @@
           v-if="article.file.url"
           :href="article.file.url"
           :download="article.file.name"
+          target="_blank"
           >Download</a
         >
       </div>
@@ -66,6 +67,7 @@ export default {
 <style scoped>
 .article-item {
   flex-basis: 33.333333%;
+  max-width: 33.333333%;
   margin-top: 130px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -141,6 +143,7 @@ a {
 @media screen and (max-width: 800px) {
   .article-item {
     flex-basis: 50%;
+    max-width: 50%;
     margin-top: 35px;
   }
   .article-item-wrapper {
