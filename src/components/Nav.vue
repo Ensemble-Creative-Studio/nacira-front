@@ -1,8 +1,8 @@
 <template>
   <div :style="{ backgroundColor: bgColor }" id="nav">
-    <router-link to="/"
-      ><h1><span>Axel de Beaufort</span> Studio</h1></router-link
-    >
+    <router-link to="/">
+      <h1><span>Axel de Beaufort</span> & Partners</h1>
+    </router-link>
     <div class="menu">
       <router-link to="/about">About</router-link>
       <router-link to="/press">Press</router-link>
