@@ -169,5 +169,11 @@ a {
   .title {
     font-size: 28px;
   }
+
+  .img-wrapper img {
+    width: 100%;
+    object-fit: unset;
+    object-position: top;
+  }
 }
 </style>
