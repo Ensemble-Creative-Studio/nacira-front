@@ -74,5 +74,5 @@ export const fetchAllPress = async () => {
 //     pressError = newError;
 //     pressLoaded = false;
 //   }
-  return { pressData, pressError, pressLoaded };
-};
+//   return { pressData, pressError, pressLoaded };
+// };
