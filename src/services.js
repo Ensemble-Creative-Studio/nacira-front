@@ -9,6 +9,7 @@ export const fetchSliderImages = async () => {
   } catch (newError) {
     sliderError = newError;
   }
+  console.log(sliderData);
   return { sliderData, sliderError };
 };
 

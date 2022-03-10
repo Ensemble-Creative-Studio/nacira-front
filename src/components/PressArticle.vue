@@ -9,8 +9,8 @@
     <div class="article-item-wrapper">
       <div class="img-wrapper">
         <img
-          :src="article.cover[0].url"
-          :alt="article.cover[0].alternativeText"
+          :src="article.cover.url"
+          :alt="article.cover.alternativeText"
           @load="onImageLoad"
         />
       </div>
@@ -20,9 +20,9 @@
       <div class="text-wrapper">
         <p class="description">{{ article.description }}</p>
         <a
-          v-if="article.file.url"
-          :href="article.file.url"
-          :download="article.file.name"
+          v-if="article.file[0].url"
+          :href="article.file[0].url"
+          :download="article.file[0].name"
           target="_blank"
           >Download</a
         >

@@ -38,7 +38,8 @@ export default {
     const { sliderData, sliderError } = await this.fetchSliderImages();
     if (sliderData.statusCode) console.error(sliderData);
     if (sliderError) console.error(sliderError);
-    if (sliderData) this.slides = sliderData.slider;
+    // if (sliderData) this.slides = sliderData.slider;
+    if (sliderData) this.slides = sliderData.slides;
     this.intervalFunction();
   },
   methods: {
