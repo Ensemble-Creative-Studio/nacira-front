@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       isImgLoaded: false,
-      image: this.slide.url,
+      image: this.slide.image.url,
     };
   },
   props: {
