@@ -1,11 +1,11 @@
 <template>
   <div class="about-text-container">
-    <p
+    <div
       v-if="description"
       class="description"
       v-html="markdownToHtml"
       v-scrollanimation
-    ></p>
+    ></div>
     <div v-if="description" class="contact-wrapper" v-scrollanimation>
       <p>
         <a target="_blank" href="https://www.instagram.com/axeldebeaufort/"
@@ -50,6 +50,12 @@ export default {
 
 .description {
   transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.description h1 {
+    font-size: 28px;
+    font-family: "Wremena", serif;
+    font-weight: 300;
 }
 
 .description p {
